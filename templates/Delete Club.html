@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Top Club</title>
+  </head>
+  <body>
+    {% include "header.html" %}
+    <h3>Are you sure you want to delete {{DeletedClub.name}} ?</h3>
+    <form class="" action="{{url_for('delete_club', club_id = club_id)}}" method="post">
+      <input type="submit" name="" value="Submit">
+      <input type="submit" name="" value="Cancel" formaction="{{url_for('club', coun = DeletedClub.country_name, club_id = DeletedClub.id)}}" formmethod="get">
+    </form>
+  </body>
+</html>

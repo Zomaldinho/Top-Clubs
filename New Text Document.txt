@@ -1,0 +1,4 @@
+client id
+814272794333-n8io7dggvrbhb7smvt45aq8kdk91ekeu.apps.googleusercontent.com
+client secret
+XOYk2KDMfGiERr1X5TKmkDkJ

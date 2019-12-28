@@ -1,0 +1,8 @@
+<h1 style="align:center; display: inline">Top Clubs In Different Countries</h1>
+{%if 'username' not in session %}
+<a href="{{url_for('login')}}" style="float:right; margin: 10px">   Login</a>
+{%else%}
+<a href="{{url_for('gdisconnect')}}" style="float:right; margin: 10px">   Logout</a>
+{%endif%}
+<a href="{{url_for('main')}}" style="float:right; margin: 10px">Home Page    </a>
+<br><br><br>

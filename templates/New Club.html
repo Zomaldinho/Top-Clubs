@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Top Clubs</title>
+  </head>
+  <body>
+    {% include "header.html" %}
+    <h1>Add New Club</h1>
+    <form class="" action="{{url_for('new_club')}}" method="POST">
+      <p>Name <br> <input type="text" name="name" value=""></p>
+      <p>Description <br> <input type="text" name="description" value=""></p>
+      <p>Country <br> <select class="" name="coun">
+        <option value="England">England</option>
+        <option value="Spain">Spain</option>
+        <option value="Germany">Germany</option>
+        <option value="Italy">Italy</option>
+        <option value="France">France</option>
+        <option value="Netherlands">Netherlands</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Egypt">Egypt</option>
+
+      </select> </p>
+      <p><input type="submit" name="" value="Submit"></p>
+    </form>
+  </body>
+</html>
