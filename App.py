@@ -227,7 +227,10 @@ def new_club():
 @app.route('/<int:club_id>/edit', methods=['GET', 'POST'])
 def edit_club(club_id):
     EditedClub = session.query(Club).filter_by(id=club_id).one()
+    creator = userinfo(EditedClub.user_id)
     if 'username' not in login_session:
+        return redirect('/login')
+    if login_session['email'] != creator.email:
         return redirect('/login')
     if request.method == 'POST':
         if request.form['name']:
@@ -246,7 +249,10 @@ def edit_club(club_id):
 @app.route('/<int:club_id>/delete', methods=['GET', 'POST'])
 def delete_club(club_id):
     DeletedClub = session.query(Club).filter_by(id=club_id).one()
+    creator = userinfo(DeletedClub.user_id)
     if 'username' not in login_session:
+        return redirect('/login')
+    if login_session['email'] != creator.email:
         return redirect('/login')
     if request.method == 'POST':
         session.delete(DeletedClub)
@@ -262,6 +268,21 @@ def delete_club(club_id):
 def MainJson():
     clubs = session.query(Club).all()
     return jsonify(Clubs=[i.serialize for i in clubs])
+
+
+@app.route('/<coun>/json')
+def ClubsJson(coun):
+    country = session.query(Country).filter_by(name=coun).one()
+    teams = session.query(Club).filter_by(country_name=country.name)
+    return jsonify(Clubs=[i.serialize for i in teams])
+
+
+@app.route('/<coun>/<int:club_id>/json')
+def clubJson(coun, club_id):
+    country = session.query(Country).filter_by(name=coun).one()
+    team = session.query(Club).filter_by(country_name=country.name
+                                         ).filter_by(id=club_id).one()
+    return jsonify(Club=team.serialize)
 
 
 if __name__ == "__main__":

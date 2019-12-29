@@ -8,8 +8,8 @@
     {% include "header.html" %}
     <h1>Add New Club</h1>
     <form class="" action="{{url_for('new_club')}}" method="POST">
-      <p>Name <br> <input type="text" name="name" value=""></p>
-      <p>Description <br> <input type="text" name="description" value=""></p>
+      <p>Name <br> <input type="text" name="name" value="" required></p>
+      <p>Description <br> <input type="text" name="description" value="" required></p>
       <p>Country <br> <select class="" name="coun">
         <option value="England">England</option>
         <option value="Spain">Spain</option>
