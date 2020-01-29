@@ -188,14 +188,14 @@ def main():
 @app.route('/<coun>/')
 def clubs(coun):
     country = session.query(Country).filter_by(name=coun).one()
-    teams = session.query(Club).filter_by(country_name=country.name)
+    teams = session.query(Club).filter_by(Country_id=country.id)
     return render_template('clubs.html', country=country, teams=teams)
 
 
 @app.route('/<coun>/<int:club_id>/')
 def club(coun, club_id):
     country = session.query(Country).filter_by(name=coun).one()
-    team = session.query(Club).filter_by(country_name=country.name
+    team = session.query(Club).filter_by(Country_id=country.id
                                          ).filter_by(id=club_id).one()
     creator = userinfo(team.user_id)
     if 'username' in login_session:

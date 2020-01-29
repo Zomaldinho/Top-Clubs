@@ -28,9 +28,7 @@ class Club(base):
     id = Column(Integer, primary_key=True)
     description = Column(String(3000), nullable=False)
     Country_id = Column(Integer, ForeignKey('country.id'))
-    countryid = relationship("Country", foreign_keys=[Country_id])
-    country_name = Column(String(100), ForeignKey('country.name'))
-    countryname = relationship("Country", foreign_keys=[country_name])
+    country = relationship(Country)
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
 
