@@ -214,7 +214,7 @@ def new_club():
     if request.method == 'POST':
         club = Club(name=request.form['name'],
                     description=request.form['description'],
-                    country_name=request.form['coun'],
+                    country_id=request.form['coun'],
                     user_id=login_session['user_id'])
         session.add(club)
         session.commit()
@@ -273,14 +273,14 @@ def MainJson():
 @app.route('/<coun>/json')
 def ClubsJson(coun):
     country = session.query(Country).filter_by(name=coun).one()
-    teams = session.query(Club).filter_by(country_name=country.name)
+    teams = session.query(Club).filter_by(Country_id=country.id)
     return jsonify(Clubs=[i.serialize for i in teams])
 
 
 @app.route('/<coun>/<int:club_id>/json')
 def clubJson(coun, club_id):
     country = session.query(Country).filter_by(name=coun).one()
-    team = session.query(Club).filter_by(country_name=country.name
+    team = session.query(Club).filter_by(Country_id=country.id
                                          ).filter_by(id=club_id).one()
     return jsonify(Club=team.serialize)
 
