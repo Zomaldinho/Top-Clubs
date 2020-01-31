@@ -214,7 +214,7 @@ def new_club():
     if request.method == 'POST':
         club = Club(name=request.form['name'],
                     description=request.form['description'],
-                    country_id=request.form['coun'],
+                    Country_id=request.form['coun'],
                     user_id=login_session['user_id'])
         session.add(club)
         session.commit()
