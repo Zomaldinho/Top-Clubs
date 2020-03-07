@@ -20,6 +20,7 @@ class Country(base):
     __tablename__ = 'country'
     id = Column(Integer, primary_key=True)
     name = Column(String(100), nullable=False)
+    img_url = Column(String(150))
 
 
 class Club(base):
@@ -31,6 +32,7 @@ class Club(base):
     country = relationship(Country)
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
+    img_url = Column(String(150))
 
     @property
     def serialize(self):

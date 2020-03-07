@@ -14,9 +14,13 @@
     </script>
     <meta charset="utf-8">
     <title>Top Clubs</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="https://pngimg.com/uploads/football/football_PNG52787.png">
   </head>
-  <body>
-    {%include 'header.html'%}
+  <body class="hoba">
+    <div class="head">
+      {% include "header.html" %}
+    </div>
     <button id="signinButton">Google Signin</button>
     <div id="result"></div>
 

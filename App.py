@@ -285,6 +285,10 @@ def clubJson(coun, club_id):
     return jsonify(Club=team.serialize)
 
 
+@app.route('/About')
+def about():
+    return render_template('About.html')
+
 if __name__ == "__main__":
     app.secret_key = 'Obba'
     app.debug = True

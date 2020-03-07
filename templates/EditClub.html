@@ -3,15 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Top Clubs</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="https://pngimg.com/uploads/football/football_PNG52787.png">
   </head>
-  <body>
-    {% include "header.html" %}
+  <body class="hoba">
+    <div class="head">
+      {% include "header.html" %}
+    </div>
     <h1>Edit Club</h1>
     <form class="" action="{{url_for('edit_club', club_id = club_id)}}" method="POST">
       <p>Name <br> <input type="text" name="name" value="" placeholder="{{EditedClub.name}}"></p>
       <p>Description <br> <input type="text" name="description" value="" placeholder="{{EditedClub.description}}" style="height:3em; width:800px"></p>
       <input type="submit" name="" value="Submit">
-      <input type="submit" name="" value="Cancel" formaction="{{url_for('club', coun = EditedClub.country_name, club_id = EditedClub.id)}}" formmethod="get">
+      <input type="submit" name="" value="Cancel" formaction="{{url_for('club', coun = EditedClub.country.name, club_id = EditedClub.id)}}" formmethod="get">
     </form>
   </body>
 </html>

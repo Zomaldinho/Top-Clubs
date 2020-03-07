@@ -2,33 +2,36 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Top Clubs</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="https://pngimg.com/uploads/football/football_PNG52787.png">
   </head>
-  <body>
-    <div class="">
+  <body id="back">
+    <div class="head">
       {% include "header.html" %}
-
     </div>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul>
-      {% for message in messages %}
-      <li><strong>{{message}}</strong></li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-    {% endwith %}
-    <div class="" style="float:left">
-      {% for i in countries %}
-      <p><a href="{{url_for('clubs', coun = i.name)}}">{{i.name}}</a></p>
-      {% endfor %}
+    <div class="contents">
+      <div class="coun">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+          {% for message in messages %}
+          <li><strong>{{message}}</strong></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% for i in countries %}
+        <a href="{{url_for('clubs', coun = i.name)}}" class="counList">{{i.name}}</a>
+        {% endfor %}
+      </div>
+      <div class="latest">
+        <h3>Latest Added Clubs</h3>
+        {%for i in latest%}
+        <a href="{{url_for('club', coun = i.country.name, club_id = i.id)}}" class="latestList">{{i.name}} ({{i.country.name}})</a>
+        {%endfor%}
+      </div>
     </div>
-    <div style="float:right" class="">
-      <h3>Latest Added Clubs</h3>
-      {%for i in latest%}
-      <p> <a href="{{url_for('club', coun = i.country.name, club_id = i.id)}}">{{i.name}} ({{i.country.name}})</a> </p>
-      {%endfor%}
-    </div>
-    <a href="{{url_for('new_club')}}">Add New Club</a>
   </body>
 </html>

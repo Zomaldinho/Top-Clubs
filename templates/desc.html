@@ -1,14 +1,75 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="
 " dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Top Clubs</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
   </head>
-  <body>
-    {% include "header.html" %}
+  <body id="hoba">
+    <div class="head">
+      {% include "header.html" %}
+    </div>
     <h1 style="display: inline">{{team.name}}</h1> <h4 style="display: inline">  ({{team.country.name}})</h4>
-    <p>{{team.description}}</p>
-    <a href="{{url_for('edit_club', club_id = team.id)}}">Edit</a> | <a href="{{url_for('delete_club', club_id = team.id)}}">Delete</a>
+    {% if team.name=='Liverpool' %}
+    <img src="https://www.pngitem.com/pimgs/m/268-2686177_liverpool-fc-transparent-logo-png-download-liverpool-fc.png" alt="">
+    {% elif team.name=='Manchester City' %}
+    <img src="https://upload.wikimedia.org/wikipedia/ar/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png" alt="">
+    {% elif team.name=='Manchester United' %}
+    <img src="https://upload.wikimedia.org/wikipedia/ar/thumb/7/7a/Manchester_United_FC_crest.svg/1200px-Manchester_United_FC_crest.svg.png" alt="">
+    {% elif team.name=='Arsenal' %}
+    <img src="https://www.pngitem.com/pimgs/m/47-473677_transparent-arsenal-png-arsenal-fc-logo-png-png.png" alt="">
+    {% elif team.name=='Real Madrid' %}
+    <img src="https://lh3.googleusercontent.com/proxy/kmKgQhj_d8iMzQr_W21Mft9tGTHPM9pox0zi3002Ea1OHgrpCPoQoxc1VHRWm-Ni6e9u1EdVYqZxOeO-VXnJjIH29x49Wv1TedSdxZjSeDFV1ochpA" alt="">
+    {% elif team.name=='Barcelona' %}
+    <img src="https://upload.wikimedia.org/wikipedia/ar/thumb/0/03/Barcelona-logo.svg/1010px-Barcelona-logo.svg.png" alt="">
+    {% elif team.name=='Atletico Madrid' %}
+    <img src="https://worldsportlogos.com/wp-content/uploads/2018/01/atletico-madrid-logo.png" alt="">
+    {% elif team.name=='Bayern Munich' %}
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Logo_FC_Bayern_M%C3%BCnchen_%282002%E2%80%932017%29.svg/1024px-Logo_FC_Bayern_M%C3%BCnchen_%282002%E2%80%932017%29.svg.png" alt="">
+    {% elif team.name=='Borussia Dortmund' %}
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/1024px-Borussia_Dortmund_logo.svg.png" alt="">
+    {% elif team.name=='Juventus ' %}
+    <img src="https://worldsportlogos.com/wp-content/uploads/2018/01/Juventus-logo.png" alt="">
+    {% elif team.name=='Paris Saint-Germain' %}
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/1200px-Paris_Saint-Germain_F.C..svg.png" alt="">
+    {% elif team.name=='AFC Ajax' %}
+    <img src="https://www.logofootball.net/wp-content/uploads/AFC-Ajax-Logo.png" alt="">
+    {% elif team.name=='Santos FC' %}
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Santos_FC_logo.svg/1045px-Santos_FC_logo.svg.png" alt="">
+    {% elif team.name=='A.C. Milan' %}
+    <img src="https://www.logofootball.net/wp-content/uploads/AC-Milan-HD-Logo.png" alt="">
+    {% elif team.name=='Zamalek SC' %}
+    <img src="https://img2.arabpng.com/20180508/deq/kisspng-zamalek-sc-egyptian-premier-league-al-ahly-sc-al-a-15-5af18921a6e335.0531775715257787216836.jpg" alt="">
+    {% elif team.name=='Ismaily SC' %}
+    <img src="https://img2.arabpng.com/20180508/deq/kisspng-zamalek-sc-egyptian-premier-league-al-ahly-sc-al-a-15-5af18921a6e335.0531775715257787216836.jpg" alt="">
+    {% endif %}
+    <p class="desc">{{team.description}}</p>
+    <a href="{{url_for('edit_club', club_id = team.id)}}" class="club">Edit</a> | <a href="{{url_for('delete_club', club_id = team.id)}}" class="club">Delete</a>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Top Clubs</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="https://pngimg.com/uploads/football/football_PNG52787.png">
+  </head>
+  <body class="hoba">
+    <div class="contDesc">
+      <div class="head">
+        {% include "header.html" %}
+      </div>
+      <div><h1 style="display: inline;">{{team.name}}</h1> <h4 style="display: inline">  ({{team.country.name}})</h4></div>
+      <div class="">
+      {% if team.img_url %}
+      <img src="{{team.img_url}}" alt="">
+      {% endif %}
+      <p class="desc">{{team.description}}</p>
+      <a href="{{url_for('edit_club', club_id = team.id)}}" class="club">Edit</a> | <a href="{{url_for('delete_club', club_id = team.id)}}" class="club">Delete</a>
+    </div>
+    </div>
   </body>
 </html>

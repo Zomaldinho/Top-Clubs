@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="
-" dir="ltr">
+<html lang="" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Top Clubs</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="https://pngimg.com/uploads/football/football_PNG52787.png">
   </head>
-  <body>
-    {% include "header.html" %}
-    <h1 style="display: inline">{{team.name}}</h1> <h4 style="display: inline">  ({{team.country.name}})</h4>
-    <p>{{team.description}}</p>
+  <body class="hoba">
+    <div class="contDesc">
+      <div class="head">
+        {% include "header.html" %}
+      </div>
+      <div><h1 style="display: inline;">{{team.name}}</h1> <h4 style="display: inline">  ({{team.country.name}})</h4></div>
+      <div class="">
+      {% if team.img_url %}
+      <img src="{{team.img_url}}" alt="">
+      {% endif %}
+      <p class="desc">{{team.description}}</p>
+    </div>
+    </div>
   </body>
 </html>

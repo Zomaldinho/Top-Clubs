@@ -1,0 +1,203 @@
+#ti{
+  font-size: 2vw;
+  color: white;
+  margin: 10px;
+  display: inline;
+  float: left;
+  font-family: 'Bernard MT',sans-serif;
+}
+
+.button{
+  width: 30%;
+}
+
+#back{
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  background-image: url(background.jpg);
+  background-size: cover;
+  flex-wrap: wrap;
+  background-size: 1366px 700px;
+}
+
+.contents{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 600px;
+}
+
+.coun{
+  order: 2;
+  width: 30vw;
+  height: 85%;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 0px 0px 25px 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.counList{
+  background-color: #626868;
+  border: none;
+  color: #FFFFFF;
+  padding: 10px 27px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5vw;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 30%;
+  height: auto;
+  margin: 5px;
+  align-self: center;
+  font-family: 'Lucida Calligraphy',cursive;
+  transition: all 0.5s ease;
+}
+
+.counList:hover {
+   transform: scale(1.2);
+}
+
+.latest{
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: 115%;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 0px 0px 25px 25px;
+  order: 2;
+}
+
+h3{
+  font-size: 1.5vw;
+  align-self: center;
+}
+
+.latestList{
+  background-color: #626868;
+  border: none;
+  color: #FFFFFF;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5vw;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 25%;
+  margin: 5px;
+  align-self: center;
+  font-family: 'Lucida Calligraphy',cursive;
+  transition: all 0.5s;
+}
+
+.latestList:hover{
+  transform: scale(1.2);
+}
+
+div.head{
+  /* display: flex; */
+  background-color: #306BAC;
+  height: 52px;
+}
+
+.hd {
+  background-color: #141B41;
+  color: white;
+  padding: 1% 2%;
+  text-align: center;
+  margin: 2.5px 0px;
+  text-decoration: none;
+  display: inline-block;
+  float:right;
+  display: inline;
+  transition: all 0.2s;
+}
+
+.hd:hover{
+  background-color: black;
+}
+
+.contClubs{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.clubs{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 60%;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 0px 0px 25px 25px;
+}
+
+.club, #signinButton {
+  background-color: #626868;
+  border: none;
+  color: #FFFFFF;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5vw;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 30%;
+  margin: 5px;
+  align-self: center;
+  font-family: 'Lucida Calligraphy',cursive;
+  transition: all 0.5s;
+}
+
+.club:hover{
+  transform: scale(1.2);
+}
+
+.hoba{
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://images.assetsdelivery.com/compings_v2/burakowski/burakowski1209/burakowski120900001.jpg);
+  /* background-size: cover; */
+  background-size: 100vw 100vh;
+  margin:0px;
+}
+
+.contDesc{
+  display: flex;
+  flex-direction: column;
+}
+img{
+  margin-left: auto;
+  float: right;
+  width: 30vw;
+  height: 60vh;
+}
+
+.desc{
+  font-family: sans-serif;
+  font-size: 1.2em;
+  text-justify: inter-word;
+}
+
+@media only screen and (max-width:600px){
+  .clubs{
+    width:50%;
+  }
+
+  .club, .counList, .latestList, h3{
+    font-size: 3vw;
+  }
+
+  img{
+    width: 30%;
+    height: 30%;
+  }
+}
+
+.del{
+  align-self: center;
+}

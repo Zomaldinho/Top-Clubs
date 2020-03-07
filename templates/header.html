@@ -1,8 +1,22 @@
-<h1 style="align:center; display: inline">Top Clubs In Different Countries</h1>
-{%if 'username' not in session %}
-<a href="{{url_for('login')}}" style="float:right; margin: 10px">   Login</a>
-{%else%}
-<a href="{{url_for('gdisconnect')}}" style="float:right; margin: 10px">   Logout</a>
-{%endif%}
-<a href="{{url_for('main')}}" style="float:right; margin: 10px">Home Page    </a>
-<br><br><br>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <title></title>
+  </head>
+  <body style="display:flex;">
+    <p id="ti">Top Clubs In Different Countries</p>
+    {%if 'username' not in session %}
+    <div id="button">
+      <a href="{{url_for('login')}}"  class="hd">   Login</a>
+      {%else%}
+      <a href="{{url_for('gdisconnect')}}" class="hd">   Logout</a>
+      {%endif%}
+      <a href="{{url_for('about')}}" class="hd">About</a>
+      <a href="{{url_for('new_club')}}" class="hd">Add New Club</a>
+      <a href="{{url_for('main')}}" class="hd" style="border-radius: 10px 0px 0px 10px;">Home Page    </a>
+    </div>
+    <br><br><br>
+  </body>
+</html>
