@@ -152,14 +152,14 @@ def gdisconnect():
         response.headers['Content-Type'] = 'application/json'
         return response
 
-    print ('In gdisconnect access token is %s', access_token)
-    print ('Username is: ')
-    print (login_session['username'])
+    print('In gdisconnect access token is %s', access_token)
+    print('Username is: ')
+    print(login_session['username'])
     url = 'https://accounts.google.com/o/oauth2/revoke?token=%s' % login_session['access_token']  # noqa
     h = httplib2.Http()
     result = h.request(url, 'GET')[0]
-    print ('result is ')
-    print (result)
+    print('result is ')
+    print(result)
     if result['status'] == '200':
         del login_session['access_token']
         del login_session['gplus_id']
